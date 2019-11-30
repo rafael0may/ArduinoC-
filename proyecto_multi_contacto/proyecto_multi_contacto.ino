@@ -18,6 +18,11 @@ int led1 = A3;
 int led2 = A2;
 int led3 = A1;
 int led4 = A0;
+//Luces de casa/////////////////////////////////
+int luz1 = 6;
+int luz2 = 5;
+int luz3 = 4;
+int luz4 = 3;
 
 //Creacion de comunicaiones SerialUSB y SerialBluethoot/////////////
 //configuraciones de las conexiones a los Relevadores//////////////
@@ -37,6 +42,10 @@ pinMode(led1, OUTPUT);//se indica que el puerto con el nombre "led1" se comporta
 pinMode(led2, OUTPUT);
 pinMode(led3, OUTPUT);
 pinMode(led4, OUTPUT);
+pinMode(luz1, OUTPUT);//se indica que el puerto con el nombre "luz1" se comportarà como salida
+pinMode(luz2, OUTPUT);
+pinMode(luz3, OUTPUT);
+pinMode(luz4, OUTPUT);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void loop() {
@@ -95,6 +104,42 @@ void loop() {
       digitalWrite (led3, HIGH);
       digitalWrite (led4, HIGH);
     }
+    if(Orden == 'A'){
+      digitalWrite (luz1, HIGH);
+    }
+    if(Orden == 'a'){
+      digitalWrite (luz1, LOW);
+    }
+    if(Orden == 'B'){
+      digitalWrite (luz2, HIGH);
+    }
+    if(Orden == 'b'){
+      digitalWrite (luz2, LOW);
+    }
+    if(Orden == 'C'){
+      digitalWrite (luz3, HIGH);
+    }
+    if(Orden == 'c'){
+      digitalWrite (luz3, LOW);
+    }
+    if(Orden == 'D'){
+      digitalWrite (luz4, HIGH);
+    }
+    if(Orden == 'd'){
+      digitalWrite (luz4, LOW);
+    }
+    if(Orden == 'E'){
+      digitalWrite (luz1, HIGH);
+      digitalWrite (luz2, HIGH);
+      digitalWrite (luz3, HIGH);
+      digitalWrite (luz4, HIGH);
+    }
+    if(Orden == 'e'){
+      digitalWrite (luz1, LOW);
+      digitalWrite (luz2, LOW);
+      digitalWrite (luz3, LOW);
+      digitalWrite (luz4, LOW);
+    }
   }
   //Ordenes por Bluetooth/////////////////////////////////////////////////////////////////////////////////////////////////
   if(BTSerial.available()>0){
@@ -150,6 +195,42 @@ void loop() {
       digitalWrite (led2, HIGH);
       digitalWrite (led3, HIGH);
       digitalWrite (led4, HIGH);
+    }
+    if(Orden == 'A'){
+      digitalWrite (luz1, HIGH);
+    }
+    if(Orden == 'a'){
+      digitalWrite (luz1, LOW);
+    }
+    if(Orden == 'B'){
+      digitalWrite (luz2, HIGH);
+    }
+    if(Orden == 'b'){
+      digitalWrite (luz2, LOW);
+    }
+    if(Orden == 'C'){
+      digitalWrite (luz3, HIGH);
+    }
+    if(Orden == 'c'){
+      digitalWrite (luz3, LOW);
+    }
+    if(Orden == 'D'){
+      digitalWrite (luz4, HIGH);
+    }
+    if(Orden == 'd'){
+      digitalWrite (luz4, LOW);
+    }
+    if(Orden == 'E'){
+      digitalWrite (luz1, HIGH);
+      digitalWrite (luz2, HIGH);
+      digitalWrite (luz3, HIGH);
+      digitalWrite (luz4, HIGH);
+    }
+    if(Orden == 'e'){
+      digitalWrite (luz1, LOW);
+      digitalWrite (luz2, LOW);
+      digitalWrite (luz3, LOW);
+      digitalWrite (luz4, LOW);
     }
   }
 }
